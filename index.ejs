@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<body class="container">
+  <table style="width: 100%;text-align: left;border-collapse: collapse;">
+    <tr>
+      <th style="background-color: darkgreen;color:white; padding: 10px;border: 1px solid darkgreen;text-align: center;">Surf locations</th>
+      <th style="background-color: darkgreen;color:white; padding: 10px;border: 1px solid darkgreen;text-align: center;">Today - <%= today %></th>
+      <th style="background-color: darkgreen;color:white; padding: 10px;border: 1px solid darkgreen;text-align: center;">Tomorrow - <%= tomorrow %></th>
+      <th style="background-color: darkgreen;color:white; padding: 10px;border: 1px solid darkgreen;text-align: center;">After Tomorrow - <%= afterTomorrow %></th>
+      <th style="background-color: darkgreen;color:white; padding: 10px;border: 1px solid darkgreen;text-align: center;">You should go</th>
+    <tr>
+    <% locations.forEach( function(location) { %>
+     <tr style="<%= location[0].good ? 'background-color:greenyellow;' : '' %>">
+       <td style="padding: 10px;border: 1px solid darkgreen;text-align: center;"><a href="<%= location[0].source %>"><%= location[0].name %></a></td>
+       <% location.forEach( function(o) { %>
+         <td style="padding: 10px;border: 1px solid darkgreen;text-align: center;"><%= o.waves %> <%= o.unit %> --- <%= o.tmpe %>&#x2103;</td>
+       <% }) %>
+       <td style="padding: 10px;border: 1px solid darkgreen;text-align: center;"><%= location[0].good ? ":)" : ":(" %></td>
+     </tr>
+    <% }) %>
+</table>
+</body>
+</html>
