@@ -64,18 +64,18 @@ exports.handler = (event, context, callback) => {
 };
 
 //Test:
-const p  = require("./index.js")
-const event = {
-  Records : [{
-    s3:{
-      bucket:{
-        name: "com.surfing.website"
-      },
-      object: {
-        key: "surfData.json"
-      }
-    }
-  }]
-}
-
-p.handler(event, null, (err) => console.log(err))
+// const p  = require("./index.js")
+// const event = {
+//   Records : [{
+//     s3:{
+//       bucket:{
+//         name: "com.surfing.website"
+//       },
+//       object: {
+//         key: "surfData.json"
+//       }
+//     }
+//   }]
+// }
+//
+// p.handler(event, null, (err) => console.log(err))

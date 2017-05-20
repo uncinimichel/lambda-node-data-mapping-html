@@ -7,15 +7,13 @@
       <th style="background-color: darkgreen;color:white; padding: 10px;border: 1px solid darkgreen;text-align: center;">Today - <%= today %></th>
       <th style="background-color: darkgreen;color:white; padding: 10px;border: 1px solid darkgreen;text-align: center;">Tomorrow - <%= tomorrow %></th>
       <th style="background-color: darkgreen;color:white; padding: 10px;border: 1px solid darkgreen;text-align: center;">After Tomorrow - <%= afterTomorrow %></th>
-      <th style="background-color: darkgreen;color:white; padding: 10px;border: 1px solid darkgreen;text-align: center;">You should go</th>
     <tr>
     <% locations.forEach( function(location) { %>
-     <tr style="<%= location[0].good ? 'background-color:greenyellow;' : '' %>">
+     <tr >
        <td style="padding: 10px;border: 1px solid darkgreen;text-align: center;"><a href="<%= location[0].source %>"><%= location[0].name %></a></td>
        <% location.forEach( function(o) { %>
-         <td style="padding: 10px;border: 1px solid darkgreen;text-align: center;"><%= o.waves %> <%= o.unit %> --- <%= o.tmpe %>&#x2103;</td>
+         <td style="<%= o.good ? 'background-color:greenyellow;' : '' %>;padding: 10px;border: 1px solid darkgreen;text-align: center;"><%= o.waves %> <%= o.unit %> --- <%= o.tmpe %>&#x2103;</td>
        <% }) %>
-       <td style="padding: 10px;border: 1px solid darkgreen;text-align: center;"><%= location[0].good ? ":)" : ":(" %></td>
      </tr>
     <% }) %>
 </table>
