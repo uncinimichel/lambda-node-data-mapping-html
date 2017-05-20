@@ -44,8 +44,8 @@ exports.handler = (event, context, callback) => {
                                             console.log("Errors during ejs parsing:", err);
                                           } else {
                                             const uploadParam = {
-                                              Bucket: "com.surfing.website",
-                                              Key: "index.html",
+                                              Bucket: "micheluncini.com",
+                                              Key: "surf.html",
                                               Body: indexHtml,
                                               ContentType: 'text/html; charset=utf-8'
                                             }
